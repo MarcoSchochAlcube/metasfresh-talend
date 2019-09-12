@@ -3,7 +3,7 @@
 metasfresh is a responsive, Free and Open Source ERP System.  
 The Talend Jobs are the Swiss knife for moving data between metasfresh and the world outside.
 
-Talend-Job:mf_import_inventory
+# Talend-Job:mf_import_inventory
 
 
 This project handles the import of inventory data to metasfresh using the generic import feature.  
