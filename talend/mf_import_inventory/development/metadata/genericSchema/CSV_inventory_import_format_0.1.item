@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_cS2GoNLqEemPX7tXLztcOQ" name="repository.metadataGenericSchema" dataPackage="_cS2GodLqEemPX7tXLztcOQ"/>
+  <TalendMetadata:GenericPackage xmi:id="_cS2GodLqEemPX7tXLztcOQ" name="repository.metadataGenericSchema" dataManager="_cS2GoNLqEemPX7tXLztcOQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_cS2GotLqEemPX7tXLztcOQ" id="_Eww8YNLqEemPX7tXLztcOQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2Go9LqEemPX7tXLztcOQ" name="lagerOrt" label="lagerOrt" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2GpNLqEemPX7tXLztcOQ" name="inventurDatum" label="inventurDatum" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2GpdLqEemPX7tXLztcOQ" name="produktSuchSchluessel" label="produktSuchSchluessel" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2GptLqEemPX7tXLztcOQ" name="zaehlMenge" label="zaehlMenge" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2Gp9LqEemPX7tXLztcOQ" name="externalHeaderId" label="externalHeaderId" talendType="id_String"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_cS2GqNLqEemPX7tXLztcOQ" name="externalLineId" label="externalLineId" talendType="id_String"/>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

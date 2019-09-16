@@ -1,0 +1,7 @@
+{
+  "mvn:org.talend.libraries/httpasyncclient-4.0.2/6.0.0-SNAPSHOT/jar" : "mvn:org.talend.libraries/httpasyncclient-4.0.2/6.0.0-SNAPSHOT/jar",
+  "mvn:org.talend.libraries/httpcore-nio-4.3.2/6.0.0-SNAPSHOT/jar" : "mvn:org.talend.libraries/httpcore-nio-4.3.2/6.0.0-SNAPSHOT/jar",
+  "mvn:org.talend.libraries/httpmime-4.3.6/6.0.0-SNAPSHOT/jar" : "mvn:org.talend.libraries/httpmime-4.3.6/6.0.0-SNAPSHOT/jar",
+  "mvn:org.talend.libraries/json-20140107/6.0.0-SNAPSHOT/jar" : "mvn:org.talend.libraries/json-20140107/6.0.0-SNAPSHOT/jar",
+  "mvn:org.talend.libraries/unirest-java-1.4.7/6.0.0-SNAPSHOT/jar" : "mvn:org.talend.libraries/unirest-java-1.4.7/6.0.0-SNAPSHOT/jar"
+}

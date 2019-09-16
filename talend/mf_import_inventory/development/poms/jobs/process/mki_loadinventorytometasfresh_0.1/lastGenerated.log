@@ -1,0 +1,52 @@
+[WARNING] Disabling enhanced local repository: using legacy is strongly discouraged to ensure build reproducibility.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building METAS_KASSEINVENTORY MKI_LoadInventoryToMetasfresh-0.1.0 (0.1,Job Designs) 0.1.0
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.apache.cxf:cxf-core:jar:3.2.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-bindings-soap:jar:3.2.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-databinding-jaxb:jar:3.2.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-transports-http:jar:3.2.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-wsdl:jar:3.2.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.neethi:neethi:jar:3.1.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.ws.xmlschema:xmlschema-core:jar:2.2.3 is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ MKI_LoadInventoryToMetasfresh ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20:test (default-test) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Building jar: C:\TALEND\TOS_ESB-20180411_1414-V7.0.1\Studio\workspace\METAS_KASSEINVENTORY\poms\jobs\process\mki_loadinventorytometasfresh_0.1\target\mki_loadinventorytometasfresh_0_1.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.0.0:single (default) @ MKI_LoadInventoryToMetasfresh ---
+[INFO] Reading assembly descriptor: C:\TALEND\TOS_ESB-20180411_1414-V7.0.1\Studio\workspace\METAS_KASSEINVENTORY\poms\jobs\process\mki_loadinventorytometasfresh_0.1/src/main/assemblies/assembly.xml
+[WARNING] Missing POM for org.apache.cxf:cxf-core:jar:3.2.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-bindings-soap:jar:3.2.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-databinding-jaxb:jar:3.2.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-transports-http:jar:3.2.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-wsdl:jar:3.2.4
+[WARNING] Missing POM for org.apache.neethi:neethi:jar:3.1.1
+[WARNING] Missing POM for org.apache.ws.xmlschema:xmlschema-core:jar:2.2.3
+[INFO] Building zip: C:\TALEND\TOS_ESB-20180411_1414-V7.0.1\Studio\workspace\METAS_KASSEINVENTORY\poms\jobs\process\mki_loadinventorytometasfresh_0.1\target\mki_loadinventorytometasfresh_0_1.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.846 s
+[INFO] Finished at: 2019-09-16T11:56:15+01:00
+[INFO] Final Memory: 11M/307M
+[INFO] ------------------------------------------------------------------------

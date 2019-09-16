@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>bin</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<files>
+		<file> <!-- jobInfo.properties -->
+			<source>${basedir}/src/main/templates/jobInfo_template.properties
+			</source>
+			<outputDirectory>.</outputDirectory>
+			<destName>jobInfo.properties</destName>
+			<filtered>true</filtered>
+		</file>
+		<file> <!-- sh -->
+			<source>${basedir}/src/main/templates/Job_run_template.sh</source>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<destName>${talend.job.name}_run.sh</destName>
+			<filtered>true</filtered>
+		</file>
+		<file> <!-- bat -->
+			<source>${basedir}/src/main/templates/Job_run_template.bat</source>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<destName>${talend.job.name}_run.bat</destName>
+			<filtered>true</filtered>
+		</file>
+		<file> <!-- ps1 -->
+			<source>${basedir}/src/main/templates/Job_run_template.ps1</source>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<destName>${talend.job.name}_run.ps1</destName>
+			<filtered>true</filtered>
+		</file>
+	</files>
+
+	<fileSets>
+		<fileSet><!-- templates -->
+			<directory>${templates.dir}</directory>
+			<outputDirectory>${talend.job.name}/src/main/templates/
+			</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- log4j resources -->
+			<directory>${log4j.resources.dir}</directory>
+			<outputDirectory>${output.resources.dir}/
+			</outputDirectory>
+			<includes>
+				<include>log4j.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- log4j.xml for running -->
+			<directory>${log4j.running.dir}</directory>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>log4j.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- xmlMappings resources -->
+			<directory>${xmlMappings.resources.dir}</directory>
+			<outputDirectory>${output.resources.dir}/xmlMappings/
+			</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- xmlMappings for running -->
+			<directory>${xmlMappings.running.dir}</directory>
+			<outputDirectory>${talend.job.name}/xmlMappings/
+			</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- rules resources -->
+			<directory>${rules.resources.dir}</directory>
+			<outputDirectory>${output.resources.dir}/rules/
+			</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- assembly_*.xml -->
+			<directory>${assemblies.dir}</directory>
+			<outputDirectory>${talend.job.name}/src/main/assemblies/
+			</outputDirectory>
+			<includes>
+				<include>assembly.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- pom_*.xml -->
+			<directory>${poms.dir}</directory>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet> <!-- add items -->
+			<directory>${items.dir}</directory>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<fileSet> <!-- add java source codes -->
+			<directory>${sourcecodes.dir}</directory>
+			<outputDirectory>${talend.job.name}/src/main/java/</outputDirectory>
+			<includes>
+				<include>${talend.job.path}/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- add context resources -->
+			<directory>${resources.dir}</directory>
+			<outputDirectory>${output.resources.dir}/
+			</outputDirectory>
+			<includes>
+				<include>${talend.job.path}/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- add test source codes -->
+			<directory>${test.sourcecodes.dir}</directory>
+			<outputDirectory>${talend.job.name}/src/test/java/</outputDirectory>
+			<includes>
+				<include>${talend.job.path}/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- add test context resources -->
+			<directory>${test.resources.dir}</directory>
+			<outputDirectory>${talend.job.name}/src/test/resources/
+			</outputDirectory>
+			<includes>
+				<include>${talend.job.path}/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- junits reports -->
+			<directory>${test.reports.dir}</directory>
+			<outputDirectory>sunfire-reports</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- add all resources for running -->
+			<directory>${contexts.running.dir}</directory>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<!-- If have children jobs, will add here -->
+		<fileSet><!-- microservice config files -->
+			<directory>${microservice.configs.dir}</directory>
+			<outputDirectory>${file.separator}</outputDirectory>
+			<includes>
+				<include>config/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- microservice running config files -->
+			<directory>${microservice.running.configs.dir}</directory>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>config/**</include>
+			</includes>
+		</fileSet>
+		<fileSet><!-- survivorship rules -->
+			<directory>${survivorship.rules.dir}</directory>
+			<outputDirectory>${talend.job.name}/items/${talend.project.name.lowercase}/metadata/survivorship/</outputDirectory>
+			<includes>
+			</includes>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<includes>
+				<include>org.talend.libraries:dom4j-1.6.1</include>
+				<include>org.talend.libraries:filecopy</include>
+				<include>org.talend.libraries:jakarta-oro-2.0.8</include>
+				<include>org.talend.libraries:jaxen-1.1.1</include>
+				<include>org.talend.libraries:log4j-1.2.16</include>
+				<include>org.talend.libraries:talendcsv</include>
+				<include>org.talend.libraries:xpathutil-1.0.0</include>
+				<include>org.example.metas_kasseinventory.code:routines</include>
+				<include>org.talend.libraries:org.apache.commons.logging_1.2.0</include>
+				<include>org.talend.libraries:javax.annotation_1.2.0.v201401042248</include>
+				<include>org.talend.libraries:opensaml-xacml-impl-3.3.0</include>
+				<include>org.talend.libraries:slf4j-log4j12-1.7.5</include>
+				<include>org.talend.libraries:cxf-rt-rs-extension-providers-3.2.4</include>
+				<include>org.talend.libraries:opensaml-xmlsec-impl-3.3.0</include>
+				<include>org.talend.libraries:bcprov_1.51.0</include>
+				<include>org.talend.libraries:woodstox-core-asl-4.4.1</include>
+				<include>org.talend.libraries:joda-time-2.9</include>
+				<include>org.talend.libraries:aopalliance-1.0</include>
+				<include>org.talend.libraries:opensaml-core-3.3.0</include>
+				<include>org.talend.libraries:opensaml-security-impl-3.3.0</include>
+				<include>org.talend.libraries:opensaml-saml-api-3.3.0</include>
+				<include>org.talend.libraries:com.google.guava_15.0.0.v201403281430</include>
+				<include>org.talend.libraries:opensaml-xacml-saml-impl-3.3.0</include>
+				<include>org.talend.libraries:security-common-7.0.1</include>
+				<include>org.talend.libraries:opensaml-profile-api-3.3.0</include>
+				<include>org.talend.libraries:javax.wsdl_1.6.2.v201012040545</include>
+				<include>org.talend.libraries:cryptacular-1.1.1</include>
+				<include>org.talend.libraries:jasypt-1.9.2</include>
+				<include>org.talend.libraries:slf4j-api-1.7.5</include>
+				<include>org.talend.libraries:cxf-rt-rs-client-3.2.4</include>
+				<include>org.talend.libraries:opensaml-xacml-api-3.3.0</include>
+				<include>org.talend.libraries:stax-api-1.0-2</include>
+				<include>org.talend.libraries:opensaml-saml-impl-3.3.0</include>
+				<include>org.talend.libraries:opensaml-xmlsec-api-3.3.0</include>
+				<include>org.talend.libraries:org.apache.log4j_1.2.15.v201012070815</include>
+				<include>org.talend.libraries:opensaml-soap-api-3.3.0</include>
+				<include>org.talend.libraries:opensaml-xacml-saml-api-3.3.0</include>
+				<include>org.talend.libraries:javax.ws.rs-api-2.1</include>
+				<include>org.talend.libraries:jettison-1.3.8</include>
+				<include>org.talend.libraries:opensaml-security-api-3.3.0</include>
+				<include>org.talend.libraries:cxf-rt-frontend-jaxrs-3.2.4</include>
+				<include>org.talend.libraries:spring-beans-4.3.10.RELEASE</include>
+				<include>org.talend.libraries:spring-core-4.3.10.RELEASE</include>
+				<include>org.talend.libraries:spring-aop-4.3.10.RELEASE</include>
+				<include>org.talend.libraries:stax2-api-3.1.4</include>
+				<include>org.talend.libraries:spring-context-4.3.10.RELEASE</include>
+				<include>org.talend.libraries:spring-expression-4.3.10.RELEASE</include>
+				<include>org.talend.libraries:commons-io-2.4</include>
+			</includes>
+			<!-- without version for talend libraries -->
+			<outputFileNameMapping>${artifact.artifactId}.${artifact.extension}
+			</outputFileNameMapping>
+			<useProjectArtifact>false</useProjectArtifact>
+		</dependencySet>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<includes>
+				<include>org.apache.wss4j:wss4j-policy</include>
+				<include>org.apache.cxf:cxf-rt-transports-http</include>
+				<include>org.apache.cxf:cxf-rt-databinding-jaxb</include>
+				<include>org.apache.cxf:cxf-rt-security-saml</include>
+				<include>org.apache.wss4j:wss4j-ws-security-common</include>
+				<include>org.apache.wss4j:wss4j-bindings</include>
+				<include>net.sf.ehcache:ehcache</include>
+				<include>org.apache.santuario:xmlsec</include>
+				<include>org.apache.neethi:neethi</include>
+				<include>org.apache.wss4j:wss4j-ws-security-policy-stax</include>
+				<include>org.apache.cxf:cxf-rt-wsdl</include>
+				<include>org.apache.cxf:cxf-rt-ws-security</include>
+				<include>commons-codec:commons-codec</include>
+				<include>org.apache.ws.xmlschema:xmlschema-core</include>
+				<include>org.apache.cxf:cxf-rt-bindings-soap</include>
+				<include>org.apache.wss4j:wss4j-ws-security-dom</include>
+				<include>org.apache.cxf:cxf-rt-security</include>
+				<include>org.apache.wss4j:wss4j-ws-security-stax</include>
+				<include>org.apache.cxf:cxf-core</include>
+			</includes>
+			<useProjectArtifact>false</useProjectArtifact>
+		</dependencySet>
+		<!-- for all jobs -->
+		<dependencySet>
+			<outputDirectory>${talend.job.name}</outputDirectory>
+			<includes>
+				<include>org.example.metas_kasseinventory.job:MKI_PostCsvToMetasfresh</include>
+				<include>org.example.metas_kasseinventory.job:MKI_LoadInventoryToMetasfresh</include>
+			</includes>
+			<outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
+			<useProjectArtifact>true</useProjectArtifact>
+		</dependencySet>
+	</dependencySets>
+</assembly>
